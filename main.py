@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import random
 import threading
 from pyghthouse import Pyghthouse
@@ -7,8 +8,9 @@ from tetromino import Tetromino, Field
 import curses
 import math
 
-USER_NAME = os.environ.get('USER_NAME')
-API_TOKEN = os.environ.get('API_TOKEN')
+load_dotenv()
+USER_NAME = os.getenv('USER_NAME')
+API_TOKEN = os.getenv('API_TOKEN')
 
 GRID_WIDTH = 10
 SCREEN_WIDTH = 28
